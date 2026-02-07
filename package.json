@@ -1,0 +1,22 @@
+{
+  "name": "my-natto",
+  "version": "1.0.0",
+  "description": "納豆の冷蔵庫残数を管理するPWA",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "lint": "eslint 'src/**/*.ts'",
+    "lint:fix": "eslint 'src/**/*.ts' --fix",
+    "format": "prettier --write 'src/**/*.ts' '*.json' '*.css' '*.html'",
+    "format:check": "prettier --check 'src/**/*.ts' '*.json' '*.css' '*.html'"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0",
+    "eslint": "^9.0.0",
+    "typescript-eslint": "^8.0.0",
+    "typescript": "^5.3.0",
+    "prettier": "^3.4.0"
+  }
+}
