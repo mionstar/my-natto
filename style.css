@@ -7,19 +7,21 @@
 }
 
 :root {
-  --bg: #FAFAF6;
+  --bg: #fafaf6;
   --text: #333;
-  --warning: #E53935;
-  --btn-buy: #8D6E63;
-  --btn-buy-hover: #6D4C41;
-  --btn-eat: #78909C;
-  --btn-eat-hover: #546E7A;
+  --warning: #e53935;
+  --btn-buy: #8d6e63;
+  --btn-buy-hover: #6d4c41;
+  --btn-eat: #78909c;
+  --btn-eat-hover: #546e7a;
   --radius: 16px;
-  --font: "Rounded Mplus 1c", -apple-system, "Hiragino Maru Gothic ProN",
-    "BIZ UDPGothic", system-ui, sans-serif;
+  --font:
+    "Rounded Mplus 1c", -apple-system, "Hiragino Maru Gothic ProN", "BIZ UDPGothic", system-ui,
+    sans-serif;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   font-family: var(--font);
   background: var(--bg);
@@ -93,7 +95,9 @@ html, body {
   color: #fff;
   cursor: pointer;
   user-select: none;
-  transition: background 0.15s ease, transform 0.1s ease;
+  transition:
+    background 0.15s ease,
+    transform 0.1s ease;
 }
 
 .btn:active {
@@ -116,9 +120,13 @@ html, body {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #1A1A1A;
-    --text: #E0E0E0;
+    --bg: #1a1a1a;
+    --text: #e0e0e0;
   }
-  .natto-illustration rect[fill="#F5F0E8"] { fill: #2A2A28; }
-  .natto-illustration rect[fill="#EDE8DC"] { fill: #232320; }
+  .natto-illustration rect[fill="#F5F0E8"] {
+    fill: #2a2a28;
+  }
+  .natto-illustration rect[fill="#EDE8DC"] {
+    fill: #232320;
+  }
 }

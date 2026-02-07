@@ -1,61 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#FAFAF6" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  <title>my-natto</title>
-  <link rel="manifest" href="./manifest.json" />
-  <link rel="apple-touch-icon" href="./icons/icon-192.png" />
-  <link rel="stylesheet" href="./style.css" />
-</head>
-<body>
-  <main class="app">
-    <div class="hero">
-      <!-- 納豆イラスト SVG（低彩度・単色系） -->
-      <svg class="natto-illustration" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <!-- パック外枠 -->
-        <rect x="40" y="60" width="200" height="160" rx="18" ry="18"
-              fill="#F5F0E8" stroke="#C8BFA8" stroke-width="2.5" />
-        <!-- パック内枠 -->
-        <rect x="56" y="76" width="168" height="128" rx="10" ry="10"
-              fill="#EDE8DC" stroke="#D4CAAF" stroke-width="1.5" />
-        <!-- 納豆の豆たち -->
-        <g fill="#C8B880" opacity="0.7">
-          <ellipse cx="100" cy="120" rx="14" ry="10" transform="rotate(-10 100 120)" />
-          <ellipse cx="140" cy="110" rx="13" ry="9" transform="rotate(15 140 110)" />
-          <ellipse cx="175" cy="118" rx="14" ry="10" transform="rotate(-5 175 118)" />
-          <ellipse cx="115" cy="148" rx="13" ry="9" transform="rotate(8 115 148)" />
-          <ellipse cx="155" cy="145" rx="14" ry="10" transform="rotate(-12 155 145)" />
-          <ellipse cx="130" cy="170" rx="13" ry="9" transform="rotate(5 130 170)" />
-          <ellipse cx="168" cy="168" rx="12" ry="9" transform="rotate(-8 168 168)" />
-          <ellipse cx="95" cy="172" rx="11" ry="8" transform="rotate(10 95 172)" />
-        </g>
-        <!-- ネバネバ糸 -->
-        <g stroke="#D4C89A" stroke-width="1" fill="none" opacity="0.45">
-          <path d="M104 125 Q120 100 136 114" />
-          <path d="M144 115 Q160 98 170 122" />
-          <path d="M118 152 Q135 135 150 149" />
-          <path d="M158 148 Q172 132 172 163" />
-          <path d="M100 125 Q108 140 112 152" />
-          <path d="M134 172 Q145 158 160 170" />
-        </g>
-      </svg>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#FAFAF6" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <title>my-natto</title>
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="apple-touch-icon" href="./icons/icon-192.png" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <div class="hero">
+        <!-- 納豆イラスト SVG（低彩度・単色系） -->
+        <svg
+          class="natto-illustration"
+          viewBox="0 0 280 280"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <!-- パック外枠 -->
+          <rect
+            x="40"
+            y="60"
+            width="200"
+            height="160"
+            rx="18"
+            ry="18"
+            fill="#F5F0E8"
+            stroke="#C8BFA8"
+            stroke-width="2.5"
+          />
+          <!-- パック内枠 -->
+          <rect
+            x="56"
+            y="76"
+            width="168"
+            height="128"
+            rx="10"
+            ry="10"
+            fill="#EDE8DC"
+            stroke="#D4CAAF"
+            stroke-width="1.5"
+          />
+          <!-- 納豆の豆たち -->
+          <g fill="#C8B880" opacity="0.7">
+            <ellipse cx="100" cy="120" rx="14" ry="10" transform="rotate(-10 100 120)" />
+            <ellipse cx="140" cy="110" rx="13" ry="9" transform="rotate(15 140 110)" />
+            <ellipse cx="175" cy="118" rx="14" ry="10" transform="rotate(-5 175 118)" />
+            <ellipse cx="115" cy="148" rx="13" ry="9" transform="rotate(8 115 148)" />
+            <ellipse cx="155" cy="145" rx="14" ry="10" transform="rotate(-12 155 145)" />
+            <ellipse cx="130" cy="170" rx="13" ry="9" transform="rotate(5 130 170)" />
+            <ellipse cx="168" cy="168" rx="12" ry="9" transform="rotate(-8 168 168)" />
+            <ellipse cx="95" cy="172" rx="11" ry="8" transform="rotate(10 95 172)" />
+          </g>
+          <!-- ネバネバ糸 -->
+          <g stroke="#D4C89A" stroke-width="1" fill="none" opacity="0.45">
+            <path d="M104 125 Q120 100 136 114" />
+            <path d="M144 115 Q160 98 170 122" />
+            <path d="M118 152 Q135 135 150 149" />
+            <path d="M158 148 Q172 132 172 163" />
+            <path d="M100 125 Q108 140 112 152" />
+            <path d="M134 172 Q145 158 160 170" />
+          </g>
+        </svg>
 
-      <!-- カウント数字（SVGの上にオーバーレイ） -->
-      <div class="count-overlay">
-        <span id="count" class="count" role="status" aria-live="polite">0</span>
+        <!-- カウント数字（SVGの上にオーバーレイ） -->
+        <div class="count-overlay">
+          <span id="count" class="count" role="status" aria-live="polite">0</span>
+        </div>
       </div>
-    </div>
 
-    <div class="actions">
-      <button id="btn-buy" class="btn btn--buy" type="button">買ったよ</button>
-      <button id="btn-eat" class="btn btn--eat" type="button">食べたよ</button>
-    </div>
-  </main>
+      <div class="actions">
+        <button id="btn-buy" class="btn btn--buy" type="button">買ったよ</button>
+        <button id="btn-eat" class="btn btn--eat" type="button">食べたよ</button>
+      </div>
+    </main>
 
-  <script src="./dist/app.js" type="module"></script>
-</body>
+    <script src="./dist/app.js" type="module"></script>
+  </body>
 </html>
