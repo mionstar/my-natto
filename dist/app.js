@@ -2,14 +2,24 @@
 const STORAGE_KEY = "natto-count";
 const ADD_AMOUNT = 3;
 function loadCount() {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    if (stored === null)
+    try {
+        const stored = localStorage.getItem(STORAGE_KEY);
+        if (stored === null)
+            return 0;
+        const parsed = parseInt(stored, 10);
+        return Number.isNaN(parsed) ? 0 : Math.max(0, parsed);
+    }
+    catch {
         return 0;
-    const parsed = parseInt(stored, 10);
-    return Number.isNaN(parsed) ? 0 : Math.max(0, parsed);
+    }
 }
 function saveCount(count) {
-    localStorage.setItem(STORAGE_KEY, String(count));
+    try {
+        localStorage.setItem(STORAGE_KEY, String(count));
+    }
+    catch {
+        // Safari private mode etc. — silently ignore
+    }
 }
 function updateDisplay(count) {
     const countEl = document.getElementById("count");
@@ -38,13 +48,9 @@ function init() {
     const eatBtn = document.getElementById("btn-eat");
     buyBtn.addEventListener("click", () => {
         requestNotificationPermission();
-        const prev = count;
         count += ADD_AMOUNT;
         saveCount(count);
         updateDisplay(count);
-        if (prev !== 1 && count === 1) {
-            notifyLowStock();
-        }
     });
     eatBtn.addEventListener("click", () => {
         requestNotificationPermission();

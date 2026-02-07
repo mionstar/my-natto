@@ -2,14 +2,22 @@ const STORAGE_KEY = "natto-count";
 const ADD_AMOUNT = 3;
 
 function loadCount(): number {
-  const stored = localStorage.getItem(STORAGE_KEY);
-  if (stored === null) return 0;
-  const parsed = parseInt(stored, 10);
-  return Number.isNaN(parsed) ? 0 : Math.max(0, parsed);
+  try {
+    const stored = localStorage.getItem(STORAGE_KEY);
+    if (stored === null) return 0;
+    const parsed = parseInt(stored, 10);
+    return Number.isNaN(parsed) ? 0 : Math.max(0, parsed);
+  } catch {
+    return 0;
+  }
 }
 
 function saveCount(count: number): void {
-  localStorage.setItem(STORAGE_KEY, String(count));
+  try {
+    localStorage.setItem(STORAGE_KEY, String(count));
+  } catch {
+    // Safari private mode etc. — silently ignore
+  }
 }
 
 function updateDisplay(count: number): void {
@@ -43,13 +51,9 @@ function init(): void {
 
   buyBtn.addEventListener("click", () => {
     requestNotificationPermission();
-    const prev = count;
     count += ADD_AMOUNT;
     saveCount(count);
     updateDisplay(count);
-    if (prev !== 1 && count === 1) {
-      notifyLowStock();
-    }
   });
 
   eatBtn.addEventListener("click", () => {
