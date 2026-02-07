@@ -1,0 +1,24 @@
+{
+  "name": "my-natto",
+  "short_name": "納豆",
+  "description": "納豆の冷蔵庫残数を管理するアプリ",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#FAFAF6",
+  "theme_color": "#FAFAF6",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "./icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
