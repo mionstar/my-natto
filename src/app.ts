@@ -64,7 +64,7 @@ function notifyLowStock(): void {
 
   new Notification("my-natto", {
     body: "納豆が残り1つです。そろそろ買いましょう",
-    icon: "./icons/icon-192.png",
+    icon: "/icons/icon-192.png",
   });
 }
 
@@ -100,7 +100,7 @@ function init(): void {
 
   // Service Worker 登録
   if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("./sw.js").catch(() => {
+    navigator.serviceWorker.register("/sw.js").catch(() => {
       // SW registration failed silently
     });
   }
